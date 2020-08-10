@@ -25,7 +25,7 @@
     "copy": "npm run copy:assets && npm run copy:enUS",
     "copy:assets": "cpx \"./assets/*\" ./build/assets/",
     "copy:enUS": "cpx \"./build/locales/en/*\" ./build/locales/en-US/",
-    "electron": "electron lib/backend/main.js",
+    "electron": "electron --no-sandbox --no-xshm lib/backend/main.js",
     "electron:debug": "cross-env NODE_ENV=development electron lib/backend/main.js",
     "lint": "tslint -p . 1>&2",
     "start": "npm run build && run-p \"start:frontend\" \"electron:debug\"",
